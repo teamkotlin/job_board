@@ -8,7 +8,13 @@
                     <div>Your asking salary ${{ $application->expected_salary }}</div>
                     <div>Average asking salary ${{ $application->job_applications_avg_expected_salary }}</div>
                 </div>
-                <div>right</div>
+                <div>
+                    <form action="{{ route('my-job-applications.destroy', $application->job) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <x-button>Cancel</x-button>
+                    </form>
+                </div>
             </div>
         </x-job-card>
     @empty

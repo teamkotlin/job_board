@@ -46,9 +46,15 @@
     </nav>
     @if (session('success'))
         <div role="alert"
-            class="my=8 rounded-md border-l-4  border-green-300 bg-green-100 p-8 text-green-700 opacity-75">
+            class="my-8 rounded-md border-l-4  border-green-300 bg-green-100 p-8 text-green-700 opacity-75">
             <p class="font-bold">Success!</p>
-            <p>{{ session('message') }}</p>
+            <p class="text-green-500">{{ session('message') }}</p>
+        </div>
+    @endif
+    @if (session('error'))
+        <div role="alert" class="my-8 rounded-md border-l-4  border-red-300 bg-red-100 p-8 text-red-700 opacity-75">
+            <p class="font-bold">Success!</p>
+            <p>{{ session('error') }}</p>
         </div>
     @endif
     {{ $slot }}
