@@ -30,6 +30,7 @@
 
             @auth
                 <li><a href="{{ route('my-job-applications.index') }}">{{ auth()->user()->name ?? 'Anonymous' }}</a> </li>
+                <li><a href="{{ route('my-jobs.index') }}">My Jobs</a></li>
                 <li>
                     <form action="{{ route('destroy') }}" method="POST">
                         @csrf
@@ -48,7 +49,7 @@
         <div role="alert"
             class="my-8 rounded-md border-l-4  border-green-300 bg-green-100 p-8 text-green-700 opacity-75">
             <p class="font-bold">Success!</p>
-            <p class="text-green-500">{{ session('message') }}</p>
+            <p>{{ session('success') }}</p>
         </div>
     @endif
     @if (session('error'))
