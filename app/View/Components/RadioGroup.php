@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 class RadioGroup extends Component
 {
 
-    public function __construct(public string $name, public array $options)
+    public function __construct(public string $name, public array $options, public bool $showAll = true)
     {
         //
     }
